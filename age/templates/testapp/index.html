@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/b2392ab33b.js"></script>
+
+        <!-- title -->
+        <title>AGE Calculator</title>
+
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Righteous&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .righteous{
+                font-family: 'Righteous', cursive;
+            }
+            .montserrat{
+                font-family: 'Montserrat', sans-serif;
+            }
+            .montserrat-alt{
+                font-family: 'Montserrat Alternates', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container my-3">
+            <h1 class="text-center pt-2 righteous text-dark"><a href="/" class="text-dark" style="text-decoration: none;">Age Calculator</a></h1>
+            <p class="text-center montserrat-alt">Developed by Jayesh Patil.</p>
+            <div class="container montserrat border border-dark rounded p-3" style="max-width: 480px;">
+            <form id="age-form" action="/agecall/" method="post">{% csrf_token %}
+                <h3 class="text-center righteous">Your Data</h3>
+                <div class="form-group">
+                    <label for="d1">Enter your Birthday day:</label>
+                    <input type="number" class="form-control montserrat-alt" id="d1" name="dd1" required>
+                </div>
+                <div class="form-group">
+                    <label for="m1">Enter your Birthday month :</label>
+                    <input type="number" class="form-control montserrat-alt"  id="m1" name="mm1" required>
+                </div>
+                <div class="form-group">
+                    <label for="y1">Enter your Birthday year :</label>
+                    <input type="number" class="form-control montserrat-alt"  id="y1" name="yy1" required>
+                </div>
+                <div class="form-group">
+                    <label for="d2">Enter your current day:</label>
+                    <input type="number" class="form-control montserrat-alt" id="d2" name="dd2" required>
+                </div>
+                <div class="form-group">
+                    <label for="m2">Enter your current month:</label>
+                    <input type="number" class="form-control montserrat-alt"  id="m2" name="mm2" required>
+                </div>
+                <div class="form-group">
+                    <label for="y2">Enter your current year:</label>
+                    <input type="number" class="form-control montserrat-alt" id="y2" name="yy2" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary border border-dark" id="submit-button" name="submit" style="width:100%">Calculate</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
